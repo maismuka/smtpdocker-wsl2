@@ -31,11 +31,58 @@ or you want default version set to 2, which when future WSL installation becomes
 
 `wsl --set-default-version 2`
 
+after finish installation and setup. You can access to the folder by using simple command `.\explorer.exe`
 
 
+## Setup Docker
+
+in your WSL,
+
+first to install Docker
+
+```
+sudo apt-get update -y
 
 
+sudo apt-get install -y \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+    
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
+sudo apt-key fingerprint 0EBFCD88
+
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+   
+sudo apt-get update -y && sudo apt-get install -y docker-ce
+
+sudo usermod -aG docker $USER
+
+```
+
+now to install Docker-Compose
+
+```
+sudo apt-get install -y docker-compose
+```
+
+now to configure WSL to connect to Docker for Windows
+
+`echo "export DOCKER_HOST=tcp://localhost:2375" >> ~/.bashrc && source ~/.bashrc `
+
+
+now you only have to install Docker on your Win 10
+
+do not forget to Expose daemon on tcp://localhost:2375 without TLS on your Docker general setting.
+
+on your WSL, test the docker using command `docker info`
+
+and when you try to run something frowm WSL, your Docker Windows is actually pulling the container.
 
 
 
