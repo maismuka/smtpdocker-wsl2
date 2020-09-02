@@ -19,6 +19,10 @@ now to set default WSL version on your windows.
 using poweshell, type `wsl --set-default-version 2`
 
 
+open microsoft store and select your linuxdistribution and install.
+
+
+after finish installing, theck the WSL version using command `wsl --list --verbose` and then '''wsl --set-version <distribution name> <versionNumber>'''
 
 
 
