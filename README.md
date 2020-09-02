@@ -5,6 +5,7 @@ requirements
 
 1. windows version higher than 1903 build 18362 
 
+## Setup WSL2 on Windows
 
 from windows documentation `https://docs.microsoft.com/en-us/windows/wsl/install-win10`
 
@@ -22,7 +23,35 @@ using poweshell, type `wsl --set-default-version 2`
 open microsoft store and select your linuxdistribution and install.
 
 
-after finish installing, theck the WSL version using command `wsl --list --verbose` and then '''wsl --set-version <distribution name> <versionNumber>'''
+after finish installing, theck the WSL version using command `wsl --list --verbose` 
+
+and then to set specifically which WSL to be converted into version 2 `wsl --set-version (distribution name) (versionNumber)`
+
+or you want default version set to 2, which when future WSL installation becomes version 2 by default
+
+`wsl --set-default-version 2`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
